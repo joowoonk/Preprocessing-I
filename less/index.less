@@ -1,5 +1,9 @@
+@themeBlack: black;
+@themeYellow: Yellow;
+@themePink:pink;
+
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,18 +17,16 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
-	padding: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -42,48 +44,78 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .container{
-	border: 1px solid grey;
 	width: 900px;
+	margin: 0 auto;
 }
 
 html, body {
     height: 100%;
 }
 
-.navigation{
-	display: flex;
-	justify-content: space-evenly;
+.centered(){
+	display:flex;
+	justify-content:space-evenly;
+  }
+
+.backgroundPink(){
+	background: pink;
 }
-a{
-	text-decoration: none;
-	color: grey;
-	margin: 3% 0;
+
+
+.navigation, .footer{
+	.center();
+	background: @themeBlack;
+	
+	a{
+		text-decoration: none;
+		color: white;
+		margin: 3% 0;
+	}
+
+	@media (max-width: 500px){
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-direction: column-reverse;
+		background: @themeYellow;
+		a{
+			color:@themeBlack;
+		}
+	}
 }
+
+
 
 h1{
 	font-size: 3rem;
 	text-align: center;
-	margin-bottom: 2%;
+	margin: 4% 0;
 }
 
 .picture-and-intro{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	// margin: 5% 5%;
-	width: 100%;
+	width: 98%;
+	margin: 0 auto;
 	background: grey;
+	
+	@media (max-width: 500px){
+		flex-direction: column;
+		.backgroundPink();
+		.my-picture{
+			width:70%;
+		}
+	}
 }
 
 .box{
@@ -95,4 +127,83 @@ h1{
 }
 p{
 	font-size: 1.4rem;
+}
+.first-section{
+	display:flex;
+	justify-content: space-evenly;
+	margin: 0 3%;
+	@media (max-width:500px){
+		flex-direction: column;
+		.skills{
+			width:100%;
+			margin: 3% 0;
+		}
+	}
+}
+.projects{
+	width:100%;
+	margin: 3% 4% auto auto;
+}
+
+.skills{
+	width: 40%;
+	margin: 3% 4% auto auto;
+}
+
+h2{
+	margin-bottom: 4%;
+	font-size: 2rem;
+}
+
+li{
+	font-size: 1.2rem;
+	margin: 1% 4%;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.company{
+	margin: 5% auto;
+	border-collapse: collapse;
+	width: 98%;
+
+	th, td{
+		text-align: left;
+		width: 25%;
+		border: 1px solid grey;
+		font-size:1.2rem;
+		padding: 1% 2%;
+		}
+}
+
+// .footer{
+// 	display: flex;
+// 	justify-content: space-around;
+// 	background: @themeBlack;
+// 	@media (max-width: 500px){
+// 		display: flex;
+// 		justify-content: space-evenly;
+// 		align-items: center;
+// 		flex-direction: column-reverse;
+// 		background: @themeYellow;
+// 		a{
+// 			color:@themeBlack;
+// 			text-decoration: none;
+// 			margin: 2% 0;
+// 		}
+// 	}
+// }
+.contact{
+	text-align: right; 
+	
+	p{
+	font-size: .9rem;
+	color: grey;
+	margin: 1% 2% 3% 0;
+	}
+	
+	h4{
+		color: @themeBlack;
+		margin: 1% 2% 0 0;
+	}
 }

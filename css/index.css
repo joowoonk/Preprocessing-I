@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -84,9 +84,7 @@ mark,
 audio,
 video {
   margin: 0;
-  padding: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -121,42 +119,66 @@ q:after {
   content: '';
   content: none;
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
 }
 .container {
-  border: 1px solid grey;
   width: 900px;
+  margin: 0 auto;
 }
 html,
 body {
   height: 100%;
 }
-.navigation {
+.navigation,
+.footer {
   display: flex;
   justify-content: space-evenly;
+  background: black;
 }
-a {
+.navigation a,
+.footer a {
   text-decoration: none;
-  color: grey;
+  color: white;
   margin: 3% 0;
+}
+@media (max-width: 500px) {
+  .navigation,
+  .footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column-reverse;
+    background: Yellow;
+  }
+  .navigation a,
+  .footer a {
+    color: black;
+  }
 }
 h1 {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 2%;
+  margin: 4% 0;
 }
 .picture-and-intro {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 98%;
+  margin: 0 auto;
   background: grey;
+}
+@media (max-width: 500px) {
+  .picture-and-intro {
+    flex-direction: column;
+  }
+  .picture-and-intro .my-picture {
+    width: 70%;
+  }
 }
 .box {
   margin: 5% 5%;
@@ -166,4 +188,61 @@ h1 {
 }
 p {
   font-size: 1.4rem;
+}
+.first-section {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 3%;
+}
+@media (max-width: 500px) {
+  .first-section {
+    flex-direction: column;
+  }
+  .first-section .skills {
+    width: 100%;
+    margin: 3% 0;
+  }
+}
+.projects {
+  width: 100%;
+  margin: 3% 4% auto auto;
+}
+.skills {
+  width: 40%;
+  margin: 3% 4% auto auto;
+}
+h2 {
+  margin-bottom: 4%;
+  font-size: 2rem;
+}
+li {
+  font-size: 1.2rem;
+  margin: 1% 4%;
+  width: 100%;
+  border-collapse: collapse;
+}
+.company {
+  margin: 5% auto;
+  border-collapse: collapse;
+  width: 98%;
+}
+.company th,
+.company td {
+  text-align: left;
+  width: 25%;
+  border: 1px solid grey;
+  font-size: 1.2rem;
+  padding: 1% 2%;
+}
+.contact {
+  text-align: right;
+}
+.contact p {
+  font-size: 0.9rem;
+  color: grey;
+  margin: 1% 2% 3% 0;
+}
+.contact h4 {
+  color: black;
+  margin: 1% 2% 0 0;
 }
